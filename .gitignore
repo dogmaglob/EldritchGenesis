@@ -2,7 +2,8 @@
 xcuserdata/
 
 *.swp
-
+ 
+.DS_Store
 CLAUDE.md
 DESIGN.md
 MODERN.md
