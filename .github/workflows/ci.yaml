@@ -10,4 +10,4 @@ jobs:
       - run: xcodebuild -version   # log the pinned version
       - run: swift test --package-path EldritchCore
       - run: swift test --package-path EldritchData
-      - run: xcodebuild test -scheme EldritchGenesis -destination 'platform=iOS Simulator,name=iPhone 17'
+      - run: xcodebuild test -scheme EldritchGenesis -destination 'platform=iOS Simulator,name=iPhone 17' -skipPackagePluginValidation
