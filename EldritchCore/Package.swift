@@ -5,6 +5,9 @@ import PackageDescription
 
 let package = Package(
     name: "EldritchCore",
+    platforms: [
+        .iOS(.v26),
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -19,6 +22,7 @@ let package = Package(
             name: "EldritchCore",
             swiftSettings: [
                 .enableUpcomingFeature("ApproachableConcurrency"),
+                .treatAllWarnings(as: .error),
             ],
         ),
         .testTarget(
@@ -26,6 +30,7 @@ let package = Package(
             dependencies: ["EldritchCore"],
             swiftSettings: [
                 .enableUpcomingFeature("ApproachableConcurrency"),
+                .treatAllWarnings(as: .error),
             ],
         ),
     ]
