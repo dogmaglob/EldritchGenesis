@@ -1,8 +1,7 @@
 import Testing
 @testable import EldritchCore
 
-@Test func example() async throws {
-    // Write your test here and use APIs like `#expect(...)` to check expected conditions.
-    // Swift Testing Documentation
-    // https://developer.apple.com/documentation/testing
+@Test func bundledCatalogLoads() throws {
+    let catalog = try Catalog.bundled()
+    #expect(!catalog.expansions.isEmpty)
 }
