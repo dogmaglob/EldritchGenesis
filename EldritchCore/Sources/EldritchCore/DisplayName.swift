@@ -8,7 +8,7 @@ extension Catalog {
         guard let item = ancientOnes.first(where: { $0.id == id }) else { return .unknown(id: id) }
         return .name(item.name)
     }
-    
+
     public func displayName(forInvestigator id: Investigator.ID) -> DisplayName {
         guard let item = investigators.first(where: { $0.id == id }) else { return .unknown(id: id) }
         return .name(item.name)

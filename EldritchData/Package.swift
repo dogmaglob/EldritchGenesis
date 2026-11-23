@@ -17,6 +17,7 @@ let package = Package(
     ],
     dependencies: [
         .package(path: "../EldritchCore"),
+        .package(url: "https://github.com/SimplyDanny/SwiftLintPlugins", from: "0.65.1"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -30,6 +31,7 @@ let package = Package(
                 .enableUpcomingFeature("ApproachableConcurrency"),
                 .treatAllWarnings(as: .error),
             ],
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")],
         ),
         .testTarget(
             name: "EldritchDataTests",
@@ -38,6 +40,7 @@ let package = Package(
                 .enableUpcomingFeature("ApproachableConcurrency"),
                 .treatAllWarnings(as: .error),
             ],
+            plugins: [.plugin(name: "SwiftLintBuildToolPlugin", package: "SwiftLintPlugins")],
         ),
     ]
 )

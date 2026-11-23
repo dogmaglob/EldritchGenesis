@@ -1,0 +1,8 @@
+only_rules:
+   - identifier_name
+   - indentation_width
+   - trailing_whitespace
+
+allow_zero_lintable_files: false
+
+strict: true
