@@ -17,9 +17,9 @@ func namesOfAncientOnes(id: String, displayName: DisplayName) throws {
 }
 
 @Test("Get display names of investigators", arguments: [
-        ("dilettante", DisplayName.name("Dilettante")),
-        ("cable-guy", DisplayName.unknown(id: "cable-guy")),
-        ("", DisplayName.unknown(id: "")),
+    ("dilettante", DisplayName.name("Dilettante")),
+    ("cable-guy", DisplayName.unknown(id: "cable-guy")),
+    ("", DisplayName.unknown(id: "")),
 ])
 func namesOfInvestigators(id: String, displayName: DisplayName) throws {
     let catalog = try Catalog.bundled()
