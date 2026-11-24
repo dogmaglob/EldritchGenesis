@@ -6,11 +6,6 @@ public struct Catalog: Codable, Sendable {
     public let investigators: [Investigator]
 }
 
-public enum CatalogError: Error, Sendable {
-    case resourceMissing
-    case decodingFailed(String)
-}
-
 extension Catalog {
     public static func bundled() throws(CatalogError) -> Catalog {
         guard let url = Bundle.module.url(forResource: "catalog", withExtension: "json") else {
