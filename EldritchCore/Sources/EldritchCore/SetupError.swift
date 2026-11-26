@@ -1,5 +1,8 @@
 public enum SetupError: Error, Equatable, Sendable {
-    case notEnoughInvestigators(requested: Int, available: Int)
-    case noAncientOnes
+    case invalidIndex(Int)
     case invalidInvestigatorCount(Int)
+    case notEnoughInvestigators(requested: Int, available: Int)
+    case noAlternativeAncientOne
+    case noAlternativeInvestigator
+    case noAncientOnes
 }

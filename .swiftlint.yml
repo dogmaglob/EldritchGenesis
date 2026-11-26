@@ -1,7 +1,8 @@
 only_rules:
    - identifier_name
-   - trailing_whitespace
    - one_declaration_per_file
+   - trailing_closure
+   - trailing_whitespace
 
 allow_zero_lintable_files: false
 
