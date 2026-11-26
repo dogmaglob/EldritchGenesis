@@ -17,7 +17,7 @@ public enum Randomizer {
         guard let chosenAncientOne = ownedAncientOnes.randomElement(using: &rng) else { throw .noAncientOnes }
 
         return Setup(ancientOneID: chosenAncientOne.id,
-                     investigatorIDs: chosenInvestigators.map { $0.id } )
+                     investigatorIDs: chosenInvestigators.map { $0.id })
     }
 
     public static func rerollAncientOne(in setup: Setup,

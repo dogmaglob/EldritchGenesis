@@ -179,50 +179,50 @@ import Testing
 
 extension Expansion {
     static func core() -> Expansion {
-        return Expansion(name: "core", id: "core")
+        Expansion(name: "core", id: "core")
     }
 
     static func first() -> Expansion {
-        return Expansion(name: "first", id: "first")
+        Expansion(name: "first", id: "first")
     }
 }
 
 extension AncientOne {
     static func cthulhu() -> AncientOne {
-        return AncientOne(name: "Cthulhu", expansion: "core", id: "cthulhu")
+        AncientOne(name: "Cthulhu", expansion: "core", id: "cthulhu")
     }
 
     static func yig() -> AncientOne {
-        return AncientOne(name: "Yig", expansion: "core", id: "yig")
+        AncientOne(name: "Yig", expansion: "core", id: "yig")
     }
 
     static func barney() -> AncientOne {
-        return AncientOne(name: "Barney", expansion: "first", id: "barney")
+        AncientOne(name: "Barney", expansion: "first", id: "barney")
     }
 }
 
 extension Investigator {
     static func dickTracy() -> Investigator {
-        return Investigator(name: "Dick Tracy", expansion: "core", id: "dick-tracy")
+        Investigator(name: "Dick Tracy", expansion: "core", id: "dick-tracy")
     }
 
     static func greenHornet() -> Investigator {
-        return Investigator(name: "Green Hornet", expansion: "core", id: "green-hornet")
+        Investigator(name: "Green Hornet", expansion: "core", id: "green-hornet")
     }
 
     static func sherlock() -> Investigator {
-        return Investigator(name: "Sherlock", expansion: "first", id: "sherlock")
+        Investigator(name: "Sherlock", expansion: "first", id: "sherlock")
     }
 }
 
 extension Catalog {
     static func test() -> Catalog {
-        return Catalog(expansions: [.core(), .first()],
-                       ancientOnes: [.cthulhu(), .yig(), .barney()],
-                       investigators: [.dickTracy(), .greenHornet(), .sherlock()])
+        Catalog(expansions: [.core(), .first()],
+                ancientOnes: [.cthulhu(), .yig(), .barney()],
+                investigators: [.dickTracy(), .greenHornet(), .sherlock()])
     }
 
     func owned() -> Set<Expansion.ID> {
-        return ["core"]
+        ["core"]
     }
 }
