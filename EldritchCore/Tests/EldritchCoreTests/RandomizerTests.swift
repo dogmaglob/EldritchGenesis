@@ -132,7 +132,7 @@ import Testing
     var rng = CounterRNG(seed: 0)
 
     let catalog = Catalog(expansions: Catalog.test().expansions,
-                          ancientOnes: [.cthulhu()],
+                          ancientOnes: [.cthulhu(), .barney()],
                           investigators: Catalog.test().investigators)
 
     let setup = Setup(ancientOneID: AncientOne.cthulhu().id,
@@ -165,9 +165,9 @@ import Testing
 @Test func noAncientOnes() {
     var rng = CounterRNG(seed: 0)
 
-    let catalog = Catalog(expansions: [.core()],
+    let catalog = Catalog(expansions: [.core(), .first()],
                           ancientOnes: [],
-                          investigators: [.dickTracy()])
+                          investigators: [.dickTracy(), .sherlock()])
 
     #expect(throws: SetupError.noAncientOnes) {
         try Randomizer.generate(investigatorCount: 1,
@@ -181,6 +181,10 @@ extension Expansion {
     static func core() -> Expansion {
         return Expansion(name: "core", id: "core")
     }
+
+    static func first() -> Expansion {
+        return Expansion(name: "first", id: "first")
+    }
 }
 
 extension AncientOne {
@@ -190,6 +194,10 @@ extension AncientOne {
 
     static func yig() -> AncientOne {
         return AncientOne(name: "Yig", expansion: "core", id: "yig")
+    }
+
+    static func barney() -> AncientOne {
+        return AncientOne(name: "Barney", expansion: "first", id: "barney")
     }
 }
 
@@ -201,16 +209,20 @@ extension Investigator {
     static func greenHornet() -> Investigator {
         return Investigator(name: "Green Hornet", expansion: "core", id: "green-hornet")
     }
+
+    static func sherlock() -> Investigator {
+        return Investigator(name: "Sherlock", expansion: "first", id: "sherlock")
+    }
 }
 
 extension Catalog {
     static func test() -> Catalog {
-        return Catalog(expansions: [.core()],
-                       ancientOnes: [.cthulhu(), .yig()],
-                       investigators: [.dickTracy(), .greenHornet()])
+        return Catalog(expansions: [.core(), .first()],
+                       ancientOnes: [.cthulhu(), .yig(), .barney()],
+                       investigators: [.dickTracy(), .greenHornet(), .sherlock()])
     }
 
     func owned() -> Set<Expansion.ID> {
-        return Set(expansions.map { $0.id })
+        return ["core"]
     }
 }
