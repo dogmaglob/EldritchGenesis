@@ -111,6 +111,7 @@
       "product-type": "bundle.unit-test",
       "test-host-target": "EldritchGenesis",
       "dependencies": [
+        { "kind": "package", "package": "SwiftLintPlugins", "product-name": "SwiftLintBuildToolPlugin", "product-type": "build-tool-plugin" },
         "EldritchGenesis",
       ],
       "build-phases": [
